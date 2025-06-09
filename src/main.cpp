@@ -16,7 +16,9 @@ void begin() {
 }
 
 void step() {
- pqWave.phase(otherWave);
+ // pqWave.phase(otherWave);  // BACK AND FORTH MOVEMENT
+ pqWave.phase(0); // FIXED
+ 
  pqWave.frequency(2);
  pqStrip.applyWave(pqWave, 1.0);  
 }
