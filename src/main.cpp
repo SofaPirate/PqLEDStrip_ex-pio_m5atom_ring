@@ -16,9 +16,10 @@ void begin() {
 }
 
 void step() {
+  // UNCOMMENT ONE OF THE FOLLOWING FOR THE INDICATED EFFECT
  // pqWave.phase(otherWave);  // BACK AND FORTH MOVEMENT
- pqWave.phase(0); // FIXED
- 
- pqWave.frequency(2);
- pqStrip.applyWave(pqWave, 1.0);  
+ // pqWave.phase(0); // FIXED
+
+ pqWave.frequency(2); // THE NUMBER OF TIMES IT REPEATS IN ONE SECOND
+ pqStrip.applyWave(pqWave, 1.0);  // Float value = THE TIME DURACTION TO DISPLAY
 }
