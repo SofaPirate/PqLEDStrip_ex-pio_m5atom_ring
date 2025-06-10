@@ -22,14 +22,14 @@ void step()
 
    sineWave.period(0.05); // 50ms period
     
-    sineWave >> timeSlice; // TIMESLICE WILL SAMPLE TO FILL 16 SAMPLES OVER 1 SECOND
+    sineWave >> timeSlice; // TIMESLICE WILL SAMPLE TO FILL 16 SAMPLES OVER 50ms
 
-    if ( timeSlice.full() ) {
+    if ( timeSlice.full() ) { // this will trigger once all sampling is done
         pqStrip.apply(timeSlice); // draw the TimeSlice to the strip
         pqWave.phase(0); // sync the wave to the TimeSlice
     }
 
-    if ( pqStrip.full() ) {
+    if ( pqStrip.filled() ) {
         pqWave.phase(0); // sync the wave to the strip
     }
 }
