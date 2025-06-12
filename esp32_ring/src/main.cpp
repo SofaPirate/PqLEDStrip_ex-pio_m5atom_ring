@@ -47,9 +47,14 @@ unsigned long stepChrono;
 unsigned long stepChronoAccum;
 int stepChronoCount;
 
+#include <PqOSC.h>
+PqOSCSlip<1024> pqOSC(Serial, 115200);
+PqOSCOut pqOSCOutKey(pqOSC, "/key", 50); // 50 ms minimum interval between messages
+PqOSCIn pqOSCIn(pqOSC, "/test");
+
 void begin()
 {
-    Serial.begin(115200);
+   
 }
 
 void step()
