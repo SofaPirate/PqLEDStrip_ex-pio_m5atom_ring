@@ -10,6 +10,7 @@ PqStripWS281X<4,RGB,16> pqStrip;  // PIN RGB_ORDER LENGTH
 
 SineWave pqWave{2.0};
 SineWave otherWave{2.0};
+ 
 
 void begin() {
 
@@ -17,7 +18,7 @@ void begin() {
 
 void step() {
  // UNCOMMENT ONLY ONE OF THE FOLLOWING FOR THE INDICATED EFFECT
- pqWave.phase(otherWave);  // BACK AND FORTH MOVEMENT
+ pqWave.phase(otherWave*2);  // BACK AND FORTH MOVEMENT
  // pqWave.phase(0); // FIXED
  // pqWave.start(); // FIXED
 
