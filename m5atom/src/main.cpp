@@ -39,7 +39,7 @@ pq::OSCIn pqOSCIn(pqOSC, "/test");
 #include <PqLEDStrip.h>
 pq::LEDStripWS281X<PIXEL_PIN, RGB, 1> pqAtomPixel; // PIN RGB_ORDER LENGTH
 
-pq::Wave pqWave{pq::Wave::Ramp, 2.0};
+pq::Wave pqWave{pq::Wave::Random, 0.25, 0.2};
 
 class Scaler : public Chainable
 {
@@ -72,8 +72,10 @@ void begin()
 
 void step()
 {
+
   //pqWave.frequency(pqOSCIn);
-  atomButton >> pqOSCOut;
+ // atomButton >> pqOSCOut;
+pqWave >> pqOSCOut;
   pqWave >> pqAtomPixel;
 
   // pqKey >> pqSmoother >> pqStrip;
