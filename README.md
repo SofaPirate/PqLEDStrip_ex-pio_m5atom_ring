@@ -1,4 +1,4 @@
-# PlatformIO examples for Plaquette library
+# Plaquette library PlatformIO Examples 
 
 > [!CAUTION]
 > Work in progress — not ready for use.
